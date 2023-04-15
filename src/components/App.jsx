@@ -1,25 +1,25 @@
 import './App.css';
-import { ItemCount } from './ItemCount/ItemCount.jsx'
 import NavBar from './NavBar/NavBar.jsx'
 import { ItemListContainer } from './ItemListContainer/ItemListContainer.jsx'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { ItemDetailContainer } from './ItemDetailContainer/ItemDetailContainer.jsx'
+import { Checkout } from './Checkout/Checkout.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
-  /*
-    HTML      JSX
-    class -> className
-    <input> -> <input />
-    `${valor}` -> {valor}
-    style = "nombreProp: valor" -> style= {{"nombreProp": "valor"}}
-    mayor parte de las propiedades -> camelCase
-  */  
- // AQUI IRIAN LOS HOOKS
   return (
     <div className="divGeneral" style={{color: 'blue'}}>
-      <NavBar/>
-      <ItemListContainer greeting={"¡Bienvenido!"}/>
-      <ItemCount/>
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          <Route path='/product/:id' element={<ItemDetailContainer />} />     
+          <Route path='/checkout' element={<Checkout />} />
+          <Route path='*' element={<h1>404 not found</h1>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
