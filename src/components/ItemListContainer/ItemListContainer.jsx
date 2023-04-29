@@ -1,28 +1,31 @@
-import { useState, useEffect } from "react"
-import { ItemList } from '../ItemList/ItemList.jsx'
-import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { ItemList } from "../ItemList/ItemList.jsx";
+import { useParams } from "react-router-dom";
+import { useDarkModeContext } from "../../context/DarkModeContext.js";
+import { getProducts } from "../../firebase/firebase.js";
 
 export const ItemListContainer = () => {
-    const [productos, setProductos] = useState ([])
-    const {categoryId} = useParams()
-    
-    useEffect(() => {           
-        let urlAConsultar = 'https://fakestoreapi.com/products?limit=20'
-    
-        if(categoryId){
-            urlAConsultar = `https://fakestoreapi.com/products/category/${categoryId}`
-        }
+  const [productos, setProductos] = useState([]);
+  const { categoryId } = useParams();
+  const { darkMode } = useDarkModeContext();
 
-        fetch(urlAConsultar)
-            .then(res=>res.json())
-            .then(json=> {
-                setProductos(json)
-            })
-    }, [categoryId])
+  useEffect(() => {
+    getProducts().then((productos) => {
+      if (categoryId) {
+        const productosFiltrados = productos
+          .filter((prod) => prod.stock > 0)
+          .filter((prod) => prod.idCategoria === categoryId);
+        setProductos(productosFiltrados);
+      } else {
+        const productosFiltrados = productos.filter((prod) => prod.stock > 0);
+        setProductos(productosFiltrados);
+      }
+    });
+  }, [categoryId]);
 
-    return (
-        <div className="d-flex flex-wrap justify-content-between">
-            <ItemList productos={productos} />
-        </div>
-    );
-}
+  return (
+    <div className="d-flex flex-wrap justify-content-between">
+      <ItemList productos={productos} template={"Item"} />
+    </div>
+  );
+};

@@ -10,3 +10,17 @@
 .divForm {
     margin-top: 20px
 }
+
+.darkMode {
+    background-color: #000;
+    color: gainsboro
+}
+
+.cardBody {
+    background-color: #fff;
+
+}
+
+.cardBodyDark {
+    background-color: hsl(0, 0%, 33%);
+}

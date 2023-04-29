@@ -1,0 +1,38 @@
+[
+    {
+        "idCategoria": "celulares",
+        "nombre": "Celular",
+        "marca": "Xiaomi",
+        "modelo": "12X 5G Dual Sim 8GB RAM + 128GB Gris",
+        "precio": 345710,
+        "stock": 30,
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-curso-4e27c.appspot.com/o/compragamer_Imganen_general_36208_Celular_Xiaomi_12X_5G_Dual_Sim_8GB_RAM___128GB_Gris_04378525-grn.jpg?alt=media&token=3f1ff0cc-2dae-481d-b167-fafffb9f75f0"
+    },
+    {
+        "idCategoria": "celulares",
+        "nombre": "Celular",
+        "marca": "Xiaomi",
+        "modelo": "MI 11T PRO 5G Dual Sim 12GB RAM + 256GB Moonlight White ",
+        "precio": 320440,
+        "stock": 30,
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-curso-4e27c.appspot.com/o/compragamer_Imganen_general_36167_Celular_Xiaomi_MI_11T_PRO_5G_Dual_Sim_12GB_RAM___256GB_Moonlight_White_a82411a5-grn.jpg?alt=media&token=6c704976-7855-40b0-8a11-c3343276c4d4"
+    },
+    {
+        "idCategoria": "celulares",
+        "nombre": "Celular",
+        "marca": "Xiaomi",
+        "modelo": "Pocophone POCO X4 PRO 5G Dual Sim 6GB RAM + 128GB Laser Black",
+        "precio": 183240,
+        "stock": 30,
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-curso-4e27c.appspot.com/o/compragamer_Imganen_general_36151_Celular_Xiaomi_Pocophone_POCO_X4_PRO_5G_Dual_Sim_6GB_RAM___128GB_Laser_Black_9b614652-grn.jpg?alt=media&token=187ba496-a20f-4b40-b488-8fd01b13495d"
+    },
+    {
+        "idCategoria": "celulares",
+        "nombre": "Celular",
+        "marca": "Xiaomi",
+        "modelo": "Redmi 10 C Dual Sim 4GB RAM + 128GB Graphite Gray",
+        "precio": 93700,
+        "stock": 30,
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-curso-4e27c.appspot.com/o/compragamer_Imganen_general_36135_Celular_Xiaomi_Redmi_10_C_Dual_Sim_4GB_RAM___128GB_Graphite_Gray_79a8a7b1-grn.jpg?alt=media&token=09cfa4c4-0bdb-450c-9301-17a1101f2e3d"
+    }
+]

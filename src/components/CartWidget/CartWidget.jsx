@@ -1,9 +1,16 @@
 import { FaShoppingCart } from "react-icons/fa";
+import { useCarritoContext } from "../../context/CartContext";
 
-export const CartWidget = ({cantCarrito}) => {
+export const CartWidget = () => {
+    const {getItemQuantity} = useCarritoContext();
     return (
-        <>
-            <p>{cantCarrito} <FaShoppingCart />  Carrito</p>            
+        <>     
+            <button className="btn btn-dark">
+                <FaShoppingCart />
+                {getItemQuantity() > 0 && (
+                    <span className="cantCarrito">{getItemQuantity()}</span>
+                )}
+            </button>            
         </>
     );
 }
