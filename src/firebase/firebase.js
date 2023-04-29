@@ -56,11 +56,21 @@ export const createOrdenCompra = async (cliente, precioTotal, carrito, fecha) =>
     precioTotal,
     fecha
   })
-  console.log('nueva orden:', ordenCompra);
+  return ordenCompra;
 }
 
 export const getOrdenCompra = async(id) => {
-  const ordenCompra = await getDoc(doc(db, "ordenCompra", id))
-  const item = {...ordenCompra.data(), id: ordenCompra.id}
+  const ordenCompra = await getDoc(doc(db, "ordenCompra", id));
+  const item = {...ordenCompra.data(), id: ordenCompra.id};
   console.log('orden de compra:', item);
+}
+
+export const updateProduct = async(id, info) => {
+  const estado = await updateDoc(doc(db, "products", id), info);
+  console.log(estado);
+}
+
+export const deleteProduct = async(id) => {
+  const estado = await deleteDoc(doc(db, "products", id));
+  return estado
 }

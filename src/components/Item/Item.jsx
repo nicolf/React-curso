@@ -7,6 +7,7 @@ export const Item = ({ item }) => {
             <div className="card-body">
                 <h5 className="card-title">{item.nombre}</h5>
                 <p className="card-text">{item.marca} {item.modelo}</p>
+                <p className="card-text">Stock: {item.stock}</p>
                 <p className="card-text">${item.precio.toLocaleString('es-AR')}</p>
                 <Link className="nav-link" to={`/product/${item.id}`}>
                     <button className="btn btn-dark">Ver producto</button>

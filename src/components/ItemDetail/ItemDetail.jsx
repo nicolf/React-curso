@@ -20,7 +20,7 @@ export const ItemDetail = ({item}) => {
                     <h5 className="card-title">{item.nombre}</h5>
                     <p className="card-text">{item.marca} {item.modelo}</p>                    
                     <p className="card-text">Precio: ${item.precio.toLocaleString('es-AR')}</p>
-                    
+                    <p className="card-text">Stock: {item.stock}</p>
                     <ItemCount valInicial={1} min={1} max={10} onAdd={onAdd}/> 
                      
                 </div>

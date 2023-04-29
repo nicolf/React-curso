@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Cart } from './Cart/Cart';
 import { createProducts } from '../firebase/firebase.js';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Context
 import { DarkModeProvider } from '../context/DarkModeContext'
@@ -18,6 +20,7 @@ function App() {
       <BrowserRouter>
         <DarkModeProvider>
           <NavBar/>
+          <ToastContainer />
           <Routes>
             <Route path='/' element={<ItemListContainer />} />
             <Route path='/category/:categoryId' element={<ItemListContainer />} />
