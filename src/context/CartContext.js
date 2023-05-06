@@ -50,8 +50,6 @@ export const CarritoProvider = (props) => { // Como generar el contexto en la ap
         return carrito.reduce((acum, prod) => acum += (prod.quantity * prod.precio), 0)
     }
 
-    console.log(carrito)
-
     return (
         <CarritoContext.Provider value={{carrito, addItem, removeItem, emptyCart, totalPrice, getItemQuantity}}>
             {props.children}

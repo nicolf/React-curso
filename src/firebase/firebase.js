@@ -21,7 +21,6 @@ export const createProducts = async () => {
   const promise = await fetch('./json/products.json');
   const products = await promise.json();
   products.forEach( async ({ nombre, marca, modelo, idCategoria, stock, precio, img }) => {
-    console.log('entra');
     const response = await addDoc(collection(db, "products"), {
       nombre,
       marca,
@@ -31,7 +30,6 @@ export const createProducts = async () => {
       precio,
       img
     })
-    console.log('respuesta', response);
   })
 }
 
@@ -62,12 +60,10 @@ export const createOrdenCompra = async (cliente, precioTotal, carrito, fecha) =>
 export const getOrdenCompra = async(id) => {
   const ordenCompra = await getDoc(doc(db, "ordenCompra", id));
   const item = {...ordenCompra.data(), id: ordenCompra.id};
-  console.log('orden de compra:', item);
 }
 
 export const updateProduct = async(id, info) => {
   const estado = await updateDoc(doc(db, "products", id), info);
-  console.log(estado);
 }
 
 export const deleteProduct = async(id) => {

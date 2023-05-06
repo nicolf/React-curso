@@ -5,8 +5,6 @@ export const ItemDetail = ({item}) => {
 
     const {addItem} = useCarritoContext()
     const onAdd = (contador) => {        
-        console.log(item)
-        console.log(contador)
         addItem(item, contador);
     }
 
